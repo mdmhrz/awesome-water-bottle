@@ -1,7 +1,7 @@
 import React, {use, useState, useEffect} from 'react';
 import Bottle from '../Bottle/Bottle';
 import './Bottles.css'
-import { addToStoreCart, getStoreCart } from '../../utilities/localStorage';
+import { addToStoreCart, getStoreCart, removeFromCart } from '../../utilities/localStorage';
 import Cart from '../Cart/Cart';
 
 const Bottles = ({bottlesPromise}) => {
@@ -40,10 +40,11 @@ const Bottles = ({bottlesPromise}) => {
     }
 
     const handleRemoveFromCart = (id) => {
-        console.log('remove item form the cart', id);
+        // console.log('remove item form the cart', id);
 
         const remainingCart = cart.filter(bottle => bottle.id !== id);
         setCart(remainingCart);
+        removeFromCart(id);
         
     }
     
