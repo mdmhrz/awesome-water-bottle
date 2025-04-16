@@ -11,7 +11,7 @@ const Bottle = ({bottle, handleAddToCart}) => {
             <img src={bottle.img} alt="" />
             <h3>{name}</h3>
             <p>Price: ${price}</p>
-            <button onClick={handleAddToCart}>Buy Now</button>
+            <button onClick={()=>handleAddToCart(bottle)}>Buy Now</button>
         </div>
     );
 };
